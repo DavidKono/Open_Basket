@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}About{% endblock %}
+
+
+{% block content %}
+
+<style>
+    .content {
+        margin: 0 auto;
+        max-width: 80%;
+        padding: 20px;
+    }
+
+    .contact-info h1,
+    .contact-info p {
+        text-align: center;
+    }
+
+    .contact-info {
+        margin-top: 50px;
+    }
+</style>
+
+<div class="content">
+    <h1>About OpenBasket</h1>
+
+    <p style = "margin-top: 3vh;">Welcome to OpenBasket, we are a small startup trying to make changes by helping others - help others.
+    We believe helping others is one of the greatest feelings, that's why we're trying to make it easy and fun to get into.
+    </p>
+
+    <p>We will help charities find donations by creating a charity site users will want to use - we will gamify charity through leaderboards, streaks, rewards, and achievements.
+    </p>
+</div>
+
+<div class="contact-info">
+    <h1>Contact us</h1>
+    <p>Email: open@basket.ie</p>
+</div>
+{% endblock %}
