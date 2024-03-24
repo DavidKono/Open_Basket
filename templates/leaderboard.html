@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<style>
+@keyframes popIn {
+    0% {
+        background-color: var(--orange);
+        transform: scale(1.05);
+        opacity: 1; 
+    }
+    100% {
+
+        opacity: 1; 
+    }
+}
+
+.rounded-box.hover-grow:hover {
+    background-color: var(--orange);
+}
+
+.img-container {
+    width: 10vh;
+    height: 10vh;
+    border-radius: 50%; 
+}
+
+.rounded-box {
+    width: 80vw;
+    background-color: var(--cream);
+    color: var(--white);
+    border-radius: 25px;
+    overflow: hidden; 
+    margin-bottom: 10px; 
+}
+
+.table-custom, .rounded-box table {
+    table-layout: fixed; 
+    width: 100%;
+    text-align: left;
+}
+
+.col-left_space { width: 5%; }
+.col-index { width: 5%; }
+.col-img { width: 10%; }
+.col-streak { width: 10%; }
+.col-name { width: 30%; }
+.col-weekly { width: 20%; }
+
+
+</style>
+<div class="container mt-4">
+    <h2 class="mb-4" style="margin-bottom: 3vh">Top Donators</h2>
+</div>
+
+<head></head>
+
+{% for donator in top_donators %}
+<a href="{{ url_for('profile', user_name=donator.user_name) }}" class="rounded-box hover-grow list-popin" style="display: block; text-decoration: none; color: var(--white);">
+    <table>
+        <tr>
+            <th scope="row" class="col-left_space"></th>
+            <th class="col-index">{{ loop.index }}</th>
+            <td class="col-img"><img src="{{ url_for('static', filename=donator.img_path) }}" alt="Donator" class="img-container rounded-circle"/></td>
+            <td class="col-streak">{{ donator['donationStreak'] }} 🔥</td>
+            <td class="col-name">{{ donator['name'] }}</td>
+            <td class="col-weekly">${{ donator['weeklyDonation'] }}</td>
+        </tr>
+    </table>
+</a>
+{% endfor %}
+
+
+{% endblock %}

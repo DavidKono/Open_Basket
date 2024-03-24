@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<style>
+.profile-layout {
+    display: flex;
+    justify-content: center; 
+    gap: 2vw; 
+    margin-top: 10px; 
+}
+
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: row; 
+    margin-top: 10px; 
+}
+
+.img-container {
+    width: 25vh;
+    height: 25vh;
+    border-radius: 50%; 
+    object-fit: cover;
+    margin-right: 5vh;
+}
+
+.rounded-box {
+    width: 18vw;
+    background-color: var(--orange);
+    outline: 2px solid var(--white);
+    color: var(--white);
+    border-radius: 25px;
+    overflow: hidden; 
+    margin-bottom: 10px; 
+}
+
+h2, p {
+    text-align: center;
+    margin: 5px; 
+}
+
+.user-details {
+    text-align: center;
+    margin-top: 20px; 
+}
+</style>
+
+<div class="profile-container">
+    <img src="{{ url_for('static', filename=user.img_path) }}" alt="OpenBasket" class="img-container rounded-circle">
+    <h2>{{ user['name'] }}</h2>
+</div>
+
+<div class="user-details">
+    <p>{{ user['user_followers'] }} Followers    {{ user['user_following'] }} Following</p>
+    <div>
+        <p class="rounded-box" style="margin-top: 10px; width: 60vw; padding: 10px; background-color: var(--cream);">{{ user['user_bio'] }}</p>
+    </div>
+</div>
+
+<div class="profile-layout">
+    <div class="stats-container">
+        <div class="rounded-box">
+            <h2>🔥 {{ user['donationStreak'] }}</h2>
+            <p>Donation Streak</p>
+        </div>
+        <div class="rounded-box">
+            <h2>🏆 {{ user['toptenfinishes'] }}</h2>
+            <p>Top Ten Finishes</p>
+        </div>
+    </div>
+    <div class="stats-container">
+        <div class="rounded-box">
+            <h2>🎁 {{ user['num_donations'] }}</h2>
+            <p>Donations</p>
+        </div>
+        <div class="rounded-box">
+            <h2>🧮 $ {{ user['donations_total'] }}</h2>
+            <p>Donations Total</p>
+        </div>
+    </div>
+</div>
+<div class="rounded-box" style="width: 38vw">
+    <h2>❤️ {{ user['favourite_charity'] }}</h2>
+    <p>Favourite Charity</p>
+</div>
+{% endblock %}

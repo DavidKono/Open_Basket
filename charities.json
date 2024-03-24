@@ -1,0 +1,29 @@
+{
+    "charities": [
+      {
+        "name": "Trocaire",
+        "description": "Trocaire focuses on alleviating poverty and promoting justice globally. Donations support emergency relief efforts and long-term development projects.",
+        "img_path": "trocaire.jpg",
+        "charity_site_link": "https://www.trocaire.org"
+      },
+      {
+        "name": "Unicef",
+        "description": "Unicef works to improve the lives of children around the world. Donations help provide vaccines, education, and emergency aid to children in need.",
+        "img_path": "unicef.png",
+        "charity_site_link": "https://www.unicef.org"
+      },
+      {
+        "name": "Dogstrust",
+        "description": "Dogstrust is dedicated to the welfare of dogs, offering shelter and finding new homes for them. Donations fund rescue operations and support for abandoned dogs.",
+        "img_path": "dogstrust.jpg",
+        "charity_site_link": "https://www.dogstrust.ie"
+      },
+      {
+        "name": "Phibsboro Cat Rescue Center",
+        "description": "Phibsboro Cat Rescue Center is committed to rescuing and rehoming stray and unwanted cats. Donations help with veterinary care, shelter, and adoption services.",
+        "img_path": "phibsborocat.jpg",
+        "charity_site_link": "https://www.phibsborocatrescue.ie/"
+      }
+    ]
+  }
+  
